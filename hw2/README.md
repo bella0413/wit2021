@@ -1,4 +1,4 @@
-# WIT2021 React Homework2
+# React Homework2
 2주차에서 학습한 내용을 바탕으로 간단한 블로그 구현
 
 ## Issue
