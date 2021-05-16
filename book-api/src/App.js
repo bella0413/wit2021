@@ -1,4 +1,3 @@
-import "./App.css";
 import MyLibrary from "./components/MyLibrary";
 
 function App() {

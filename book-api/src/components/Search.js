@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Book from "./Book";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, InputGroup, FormControl } from "react-bootstrap";
 
 function Search(props) {
   const [query, setQuery] = useState("");
@@ -70,19 +72,27 @@ function Search(props) {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="검색할 책의 이름을 입력하세요."
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-        }}
-        onKeyPress={(e) => {
-          if (e.key === "Enter") getSearchResult();
-        }}
-      ></input>
-      <button onClick={getSearchResult}>Search</button>
-      <h2>검색 결과</h2>
+      <div className="searchBar">
+        <InputGroup className="mb-3" size="lg">
+          <FormControl
+            type="text"
+            placeholder="검색할 책의 이름 또는 저자명을 입력하세요."
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") getSearchResult();
+            }}
+          />
+          <InputGroup.Append>
+            <Button variant="primary" onClick={getSearchResult}>
+              검색
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
+      </div>
+
       {isLoading ? (
         <ul>
           {searchResult.map((book, index) => (
@@ -92,7 +102,7 @@ function Search(props) {
           ))}
         </ul>
       ) : (
-        message
+        <h3 className="center">{message}</h3>
       )}
     </div>
   );

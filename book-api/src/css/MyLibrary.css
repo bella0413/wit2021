@@ -1,0 +1,95 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    background-color: #f1f1f1;
+    padding: 30px 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.book {
+    display: flex;
+    width: 60%;
+    padding: 20px 30px;
+    margin: 20px auto;
+    border: 3px solid #d8d8d8;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+.plusIcon {
+    display: flex;
+    align-items: center;
+}
+.plusIcon img {
+    cursor: pointer;
+}
+.bookImage {
+    width: 82px;
+    height: 120px;
+    margin: 0 20px;
+    border: 1px solid #a4a4a4;
+}
+.bookTitle {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 0 10px;
+    color: #0786b2;
+    text-underline-position: under;
+    line-height: 30px;
+    font-weight: 700;
+}
+.bookAuthor {
+    display: inline-block;
+    font-size: 15px;
+    color: #182921;
+    font-weight: 600;
+}
+.searchBar {
+    width: 60%;
+    margin: auto;
+    padding: 30px 0;
+}
+.center {
+    text-align: center;
+}
