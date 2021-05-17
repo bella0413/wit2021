@@ -14,6 +14,7 @@ function MyLibrary(props) {
       setMyBookList([...myBookList, book]);
     }
     console.log(myBookList);
+    setMyBook([]);
   };
   const saveInput = (e) => {
     console.log("saveInput execute");
