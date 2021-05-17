@@ -11,8 +11,8 @@ function Search(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const URL = "/v1/search/book.json";
-  const ID_KEY = 네이버 클라이언트 아이디
-  const SECRET_KEY = 네이버 클라이언트 시크릿
+  const ID_KEY = 네이버 클라이언트 아이디;
+  const SECRET_KEY = 네이버 클라이언트 시크릿;
 
   const getSearchResult = async () => {
     try {
@@ -97,7 +97,11 @@ function Search(props) {
         <ul>
           {searchResult.map((book, index) => (
             <li key={index}>
-              <Book book={book}></Book>
+              <Book
+                book={book}
+                saveBook={props.saveBook}
+                saveInput={props.saveInput}
+              ></Book>
             </li>
           ))}
         </ul>

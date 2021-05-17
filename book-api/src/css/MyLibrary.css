@@ -56,10 +56,20 @@ table {
     border: 3px solid #d8d8d8;
     border-radius: 10px;
     background-color: #ffffff;
+    position: relative;
+}
+.radio {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 14.4%;
+    left: 2.3%;
 }
 .plusIcon {
     display: flex;
     align-items: center;
+    border: none;
+    background: none;
 }
 .plusIcon img {
     cursor: pointer;
@@ -92,4 +102,34 @@ table {
 }
 .center {
     text-align: center;
+}
+.removeButton {
+    background: none;
+    border: none;
+    position: absolute;
+    top: -10%;
+    left: 80%;
+    cursor: pointer;
+}
+.myLibraryTitle {
+    font-weight: 700;
+}
+.noBookText {
+    font-weight: 500;
+}
+.myLibrary {
+    width: 70%;
+    min-height: 100px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    background-color: #e7e7ea;
+    border-radius: 10px;
+}
+.myLibraryBook {
+    position: relative;
+    margin: 10px;
 }

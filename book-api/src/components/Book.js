@@ -4,17 +4,25 @@ import "../css/MyLibrary.css";
 function Book(props) {
   const title = props.book.title.toString().replace(/(<([^>]+)>)/gi, "");
   const author = props.book.author.toString().replace(/(<([^>]+)>)/gi, "");
+  const book = props.book;
 
   return (
     <div className="book">
-      <div className="plusIcon">
+      <input
+        name="myBook"
+        type="radio"
+        onClick={props.saveInput}
+        value={book.image}
+        className="radio"
+      ></input>
+      <button className="plusIcon" onClick={props.saveBook}>
         <img src="/image/plus.png" width="30px"></img>
-      </div>
-      <a href={props.book.link}>
-        <img src={props.book.image} className="bookImage"></img>
+      </button>
+      <a href={book.link}>
+        <img src={book.image} className="bookImage"></img>
       </a>
       <div>
-        <a href={props.book.link} className="bookTitle">
+        <a href={book.link} className="bookTitle">
           {title}
         </a>
         <br></br>
