@@ -24,9 +24,6 @@ const App = () => {
           name="Main"
           component={MainScreen}
           options={{
-            headerStyle: {
-              backgroundColor: 'red',
-            },
             headerLeft: () => (
               <Icon name="ios-camera" style={{paddingLeft: 15}}></Icon>
             ),
