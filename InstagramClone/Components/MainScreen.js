@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, Platform, View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import {Icon} from 'native-base';
 
 function MainScreen(props) {
   return (
