@@ -28,6 +28,7 @@ const App = () => {
               <Icon name="ios-camera" style={{paddingLeft: 15}}></Icon>
             ),
             title: 'Instagram',
+            headerTitleStyle: {fontStyle: 'italic', fontSize: 25},
             headerTitleAlign: 'center',
             headerRight: () => (
               <Icon name="ios-send" style={{paddingRight: 15}}></Icon>
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'green',
   },
 });
 

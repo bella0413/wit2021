@@ -1,19 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Container, Content, Icon} from 'native-base';
+import CardComponent from '../CardComponent';
+import {StyleSheet} from 'react-native';
 
 function HomeTab(props) {
   return (
-    <View style={style.container}>
-      <Text>Home</Text>
-    </View>
+    <Container style={style.container}>
+      <Content>
+        <CardComponent />
+      </Content>
+    </Container>
   );
 }
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#ffffff',
   },
 });
 
