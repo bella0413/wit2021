@@ -5,6 +5,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
@@ -13,6 +14,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import MainScreen from './Components/MainScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from 'native-base';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AddMediaTab from './Components/Navigation/VideoTab';
 
 const Stack = createStackNavigator();
 
@@ -24,14 +27,25 @@ const App = () => {
           name="Main"
           component={MainScreen}
           options={{
-            headerLeft: () => (
-              <Icon name="ios-camera" style={{paddingLeft: 15}}></Icon>
-            ),
             title: 'Instagram',
             headerTitleStyle: {fontStyle: 'italic', fontSize: 25},
-            headerTitleAlign: 'center',
+            headerTitleAlign: 'left',
             headerRight: () => (
-              <Icon name="ios-send" style={{paddingRight: 15}}></Icon>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
+                <MaterialIcons
+                  name="add-circle-outline"
+                  size={29}
+                  style={{paddingHorizontal: 8}}
+                />
+                <Icon
+                  name="heart-outline"
+                  style={{paddingHorizontal: 8}}></Icon>
+                <Icon name="ios-send" style={{paddingHorizontal: 8}}></Icon>
+              </View>
             ),
           }}
         />

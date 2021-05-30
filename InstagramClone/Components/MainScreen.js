@@ -3,8 +3,8 @@ import {StyleSheet} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import HomeTab from './Navigation/HomeTab';
 import SearchTab from './Navigation/SearchTab';
-import AddMediaTab from './Navigation/AddMediaTab';
-import LikesTab from './Navigation/LikesTab';
+import VideoTab from './Navigation/VideoTab';
+import ShoppingTab from './Navigation/ShoppingTab';
 import ProfileTab from './Navigation/ProfileTab';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -40,21 +40,25 @@ function MainScreen(props) {
       />
       <Tab.Screen
         name="AddMedia"
-        component={AddMediaTab}
+        component={VideoTab}
         options={{
           tabBarLabel: 'AddMedia',
           tabBarIcon: ({color}) => (
-            <MaterialIcons name="add-circle-outline" color={color} size={26} />
+            <MaterialCommunityIcons name="youtube" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name="Likes"
-        component={LikesTab}
+        name="Shopping"
+        component={ShoppingTab}
         options={{
-          tabBarLabel: 'Likes',
+          tabBarLabel: 'Shopping',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="heart" color={color} size={26} />
+            <MaterialCommunityIcons
+              name="shopping-outline"
+              color={color}
+              size={26}
+            />
           ),
         }}
       />
