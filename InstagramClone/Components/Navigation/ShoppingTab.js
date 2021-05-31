@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-function AddMediaTab(props) {
+function LikesTab(props) {
   return (
     <View style={style.container}>
-      <Text style={style.bigFont}>AddMedia</Text>
+      <Text style={style.bigFont}>Shopping</Text>
     </View>
   );
 }
@@ -20,4 +20,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default AddMediaTab;
+export default LikesTab;

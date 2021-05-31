@@ -11,10 +11,41 @@ import {
 import 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
 import MainScreen from './Components/MainScreen';
+import AddMediaScreen from './Components/AddMediaScreen';
+import LikesScreen from './Components/LikesScreen';
+import SendScreen from './Components/SendScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from 'native-base';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Stack = createStackNavigator();
+
+function renderAddMedia(navigation) {
+  return (
+    <MaterialIcons
+      name="add-circle-outline"
+      size={29}
+      style={{paddingHorizontal: 8}}
+      onPress={() => navigation.navigate('AddMediaScreen')}
+    />
+  );
+}
+function renderLikes(navigation) {
+  return (
+    <Icon
+      name="heart-outline"
+      style={{paddingHorizontal: 8}}
+      onPress={() => navigation.navigate('LikesScreen')}></Icon>
+  );
+}
+function renderSend(navigation) {
+  return (
+    <Icon
+      name="ios-send"
+      style={{paddingHorizontal: 8}}
+      onPress={() => navigation.navigate('SendScreen')}></Icon>
+  );
+}
 
 const App = () => {
   return (
@@ -23,18 +54,27 @@ const App = () => {
         <Stack.Screen
           name="Main"
           component={MainScreen}
-          options={{
-            headerLeft: () => (
-              <Icon name="ios-camera" style={{paddingLeft: 15}}></Icon>
-            ),
+          options={({navigation}) => ({
             title: 'Instagram',
+            // headerShown: false,
             headerTitleStyle: {fontStyle: 'italic', fontSize: 25},
-            headerTitleAlign: 'center',
+            headerTitleAlign: 'left',
             headerRight: () => (
-              <Icon name="ios-send" style={{paddingRight: 15}}></Icon>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
+                {renderAddMedia(navigation)}
+                {renderLikes(navigation)}
+                {renderSend(navigation)}
+              </View>
             ),
-          }}
+          })}
         />
+        <Stack.Screen name="AddMediaScreen" component={AddMediaScreen} />
+        <Stack.Screen name="LikesScreen" component={LikesScreen} />
+        <Stack.Screen name="SendScreen" component={SendScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
