@@ -46,6 +46,7 @@ function renderSend(navigation) {
       onPress={() => navigation.navigate('SendScreen')}></Icon>
   );
 }
+
 const App = () => {
   return (
     <NavigationContainer>
@@ -55,6 +56,7 @@ const App = () => {
           component={MainScreen}
           options={({navigation}) => ({
             title: 'Instagram',
+            // headerShown: false,
             headerTitleStyle: {fontStyle: 'italic', fontSize: 25},
             headerTitleAlign: 'left',
             headerRight: () => (
