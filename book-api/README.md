@@ -11,7 +11,7 @@
 2. Run
 
 ```bash
-yarn run android
+yarn start
 ```
 
 ## Result
