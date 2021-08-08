@@ -12,6 +12,10 @@ target 'imageEditor' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-image-editor', :path => '../node_modules/@react-native-community/image-editor'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'imageEditorTests' do
     inherit! :complete
     # Pods for testing

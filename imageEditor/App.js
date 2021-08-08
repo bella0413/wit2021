@@ -5,16 +5,14 @@ import {
   Text,
   View,
 } from 'react-native';
+import ImageEditScreen from './screens/ImageEditScreen';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Text>imageEditor</Text>
+      <ImageEditScreen></ImageEditScreen>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-});
 
 export default App;
