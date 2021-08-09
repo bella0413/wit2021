@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   ImageBackground,
     StyleSheet,
-  Button,
+    Button,
+    TouchableOpacity,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -44,24 +44,25 @@ const ImageEditScreen = () => {
             bs.current.snapTo(1);
         });
     }
-    {/*
+
     const renderContent = () => (
         <View style={styles.panel}>
             <View style={{alignItems: 'center'}}>
             <Text style={styles.panelTitle}>Upload Photo</Text>
-            <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
+            <Text style={styles.panelSubtitle}>Choose Your Ticcle Picture</Text>
             </View>
-            <TouchableOpacity onPress={takePhotoFromCamera}>
-            <Text style={styles.panelButtonTitle}>Take Photo</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={choosePhotoFromLibrary}>
-            <Text style={styles.panelButtonTitle}>Choose From Library</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-        
-            onPress={() => bs.current.snapTo(1)}>
-            <Text style={styles.panelButtonTitle}>Cancel</Text>
-            </TouchableOpacity>
+            <View style={{ paddingtop: 20, height: '100%' }}>
+                <TouchableOpacity onPress={takePhotoFromCamera} style={{paddingVertical: 10}}>
+                <Text style={styles.panelButtonTitle}>Take Photo</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={choosePhotoFromLibrary} style={{paddingVertical: 10}}>
+                <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress={() => bs.current.snapTo(1)} style={{paddingVertical: 10}}>
+                <Text style={styles.panelButtonTitle}>Cancel</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 
@@ -72,13 +73,13 @@ const ImageEditScreen = () => {
             </View>
         </View>
     );
-    */}
+
     const bs = React.useRef();
     const fall = new Animated.Value(1);
 
     return (
         <View style={styles.container}>
-            <View style={styles.panel}>
+            {/* <View style={styles.panel}>
             <View style={{alignItems: 'center'}}>
             <Text style={styles.panelTitle}>Upload Photo</Text>
             <Text style={styles.panelSubtitle}>Choose Your Picture</Text>
@@ -125,8 +126,60 @@ const ImageEditScreen = () => {
                         />
                     </View>
                 </ImageBackground>
+            </View> */}
+            <BottomSheet
+            ref={bs}
+            snapPoints={[330, 0]}
+            renderContent={renderContent}
+            renderHeader={renderHeader}
+            initialSnap={1}
+            callbackNode={fall}
+                enabledGestureInteraction={true}
+                enabledContentTapInteraction={false}
+                    />
+        <Animated.View style={{margin: 20,
+        opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)), flex:1, justifyContent: 'center',
+            }}>
+        <Text style={{fontSize:25, fontWeight: '700', paddingBottom: 80}}>Iamge Editor Pactice</Text>
+        <View style={{alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <ImageBackground
+                source={{
+                  uri: image,
+                }}
+                style={{height: 200, width: 200}}
+                imageStyle={{borderRadius: 15}}>
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="camera"
+                    size={35}
+                    color="#fff"
+                    style={{
+                      opacity: 0.7,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderWidth: 1,
+                      borderColor: '#fff',
+                      borderRadius: 10,
+                    }}
+                  />
+                </View>
+              </ImageBackground>
             </View>
-        </View>
+            </TouchableOpacity>
+            </View>
+            </Animated.View>
+            </View>
     );
 };
     
@@ -134,8 +187,8 @@ export default ImageEditScreen;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
+        height: '100%',
     },
     commandButton: {
         padding: 15,
@@ -146,10 +199,9 @@ const styles = StyleSheet.create({
     },
     panel: {
         padding: 20,
-        marginVertical: 15,
-        height: 200,
         backgroundColor: '#efefef',
         paddingTop: 20,
+        height: 300,
     },
     header: {
         backgroundColor: '#FFFFFF',
@@ -182,11 +234,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     panelButton: {
-        padding: 13,
         borderRadius: 10,
         backgroundColor: '#FF6347',
         alignItems: 'center',
-        marginVertical: 7,
     },
     panelButtonTitle: {
         fontSize: 17,
