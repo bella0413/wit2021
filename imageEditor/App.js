@@ -6,11 +6,12 @@ import {
   View,
 } from 'react-native';
 import ImageEditScreen from './screens/ImageEditScreen';
-
+import CompareImage from './screens/CompareImage';
 const App = () => {
   return (
     <SafeAreaView>
-      <ImageEditScreen></ImageEditScreen>
+      {/* <ImageEditScreen></ImageEditScreen> */}
+      <CompareImage></CompareImage>
     </SafeAreaView>
   );
 };

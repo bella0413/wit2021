@@ -48,7 +48,7 @@ const ImageEditScreen = () => {
                 cropperActiveWidgetColor: 'blue',
                 cropperStatusBarColor: 'red',
                 cropperToolbarColor: 'yellow',
-                cropperToolbarWidgetColor: 'green'
+                cropperToolbarWidgetColor: 'green',
                 cropperToolbarTitle: '티끌',
                 cropping: true,
                 compressImageQuality: 0.7
